@@ -2,73 +2,154 @@
 
 ## Overview
 
-The Rural Farming Assistant is a voice-first AI system designed to bridge the digital divide for farmers in rural India. The system operates entirely through voice interactions over standard GSM networks, eliminating barriers of smartphone access, internet connectivity, and digital literacy. 
+The Rural Farming Assistant is a voice-first AI system designed to bridge the digital divide for farmers in rural India. The system operates entirely through voice interactions over standard GSM networks, eliminating barriers of smartphone access, internet connectivity, and digital literacy.
 
-The architecture follows a microservices approach with specialized components for telephony handling, speech processing, natural language understanding, agricultural knowledge management, and safety validation. The system is designed to handle millions of concurrent users while maintaining low latency and high reliability.
+The system follows a **phased implementation approach**:
+- **Phase 1 (MVP)**: Monolithic architecture with rule-based system, DTMF fallback, 3 languages, 3 pilot districts
+- **Phase 2 (AI-Enhanced)**: Add ML capabilities while maintaining monolithic core, 5 languages, 10 districts
+- **Phase 3 (Scale)**: Evolve to microservices for critical components, 15+ languages, national deployment
 
 Key design principles:
 - **Voice-First**: All interactions are voice-based, no text or visual interfaces
-- **Dialect-Aware**: Supports 15+ rural Indian dialects with code-mixing capabilities
+- **Start Simple**: Rule-based MVP with progressive ML enhancement
+- **Dialect-Aware**: Initial 3 languages, expanding to 15+ rural Indian dialects
 - **Safety-Critical**: Multiple validation layers prevent harmful agricultural advice
-- **Scalable**: Horizontally scalable architecture for national deployment
+- **Pragmatic Scaling**: Monolithic to start, microservices when proven necessary
 - **Resilient**: Graceful degradation and human fallback mechanisms
+- **Field-Validated**: Continuous farmer feedback drives design decisions
 
 ## Architecture
 
-The system follows a layered architecture with clear separation of concerns:
+### Phase 1: MVP Architecture (Months 1-3)
+
+Simple monolithic architecture with managed services:
 
 ```mermaid
 graph TB
-    subgraph "Farmer Interface Layer"
+    subgraph "Farmer Access"
         A[Feature Phone] --> B[GSM Network]
-        B --> C[Missed Call Detection]
-        C --> D[IVR System]
+        B --> C[Twilio/Exotel IVR]
     end
-    
-    subgraph "Speech Processing Layer"
-        D --> E[Speech-to-Text Engine]
-        E --> F[Natural Language Understanding]
-        F --> G[Intent Classification]
-        G --> H[Entity Extraction]
+
+    subgraph "Core Service (Monolithic FastAPI)"
+        C --> D[DTMF Handler]
+        C --> E[Basic STT]
+        E --> F[Rule-Based Intent Matching]
+        F --> G[Agricultural Knowledge Base]
+        G --> H[Safety Validation]
+        H --> I[Response Generation]
+        I --> J[Basic TTS/Pre-recorded Audio]
     end
-    
-    subgraph "Knowledge Processing Layer"
-        H --> I[Agricultural Knowledge Engine]
-        I --> J[Disease Identification]
-        I --> K[Treatment Recommendations]
-        I --> L[Weather & Market Data]
-        I --> M[Government Schemes DB]
+
+    subgraph "Data Layer"
+        K[PostgreSQL - All Data]
+        L[Redis - Session Cache]
     end
-    
-    subgraph "Safety & Response Layer"
-        J --> N[Safety Validation Layer]
-        K --> N
-        N --> O[Response Generation]
-        O --> P[Text-to-Speech Engine]
-        P --> D
-    end
-    
-    subgraph "Fallback & Support"
-        N --> Q[Krishi Sahayak Registry]
-        Q --> R[Human Expert Connection]
-    end
-    
-    subgraph "Data & Analytics"
-        S[Farmer Profile DB]
-        T[Interaction Logs]
-        U[Performance Analytics]
-        V[Model Training Pipeline]
+
+    subgraph "Human Fallback"
+        F --> M[Krishi Sahayak Queue]
     end
 ```
 
-### Core Components
+### Phase 2: AI-Enhanced Architecture (Months 4-9)
 
-1. **Telephony Gateway**: Handles missed call detection, IVR management, and call routing
-2. **Speech Processing Pipeline**: STT, NLU, and TTS engines optimized for rural dialects
-3. **Agricultural Knowledge Engine**: Domain-specific reasoning and recommendation system
-4. **Safety Validation Layer**: Multi-tier validation for all agricultural advice
-5. **Farmer Profile System**: Context retention and personalization
-6. **Monitoring & Analytics**: Performance tracking and continuous improvement
+Monolithic core with separated ML services:
+
+```mermaid
+graph TB
+    subgraph "Farmer Access"
+        A[Feature Phone] --> B[GSM/Telecom Edge]
+    end
+
+    subgraph "Core Service (Enhanced Monolithic)"
+        B --> C[IVR Manager]
+        C --> D[Hybrid Intent System]
+        D --> E[ML Classifier|Rule Engine]
+        E --> F[Knowledge Engine]
+        F --> G[Dynamic Safety Layer]
+    end
+
+    subgraph "ML Services (Separate Containers)"
+        H[STT Service - Whisper/Wav2Vec2]
+        I[NLU Service - BERT-based]
+        J[TTS Service - Neural Models]
+    end
+
+    subgraph "Data Layer"
+        K[PostgreSQL - Main DB]
+        L[Neo4j - Knowledge Graph]
+        M[Redis - Hot Cache]
+    end
+```
+
+### Phase 3: Scaled Microservices Architecture (Months 10+)
+
+Full microservices for proven scale needs:
+
+```mermaid
+graph TB
+    subgraph "Edge Layer"
+        A[CDN/Edge Cache]
+        B[Load Balancer]
+    end
+
+    subgraph "API Gateway"
+        C[Kong/Nginx Gateway]
+    end
+
+    subgraph "Core Services"
+        D[Telephony Service]
+        E[Speech Processing Service]
+        F[NLU Service]
+        G[Knowledge Service]
+        H[Safety Service]
+        I[Profile Service]
+    end
+
+    subgraph "Data Services"
+        J[PostgreSQL Cluster]
+        K[Neo4j Cluster]
+        L[Redis Cluster]
+        M[Elasticsearch]
+    end
+
+    subgraph "Support Services"
+        N[Monitoring - Prometheus]
+        O[Logging - ELK]
+        P[Queue - RabbitMQ]
+    end
+```
+
+### Architecture Evolution Strategy
+
+1. **Start Simple**: Monolithic FastAPI application with PostgreSQL and Redis
+2. **Separate Compute-Heavy**: Extract STT/TTS as separate services when needed
+3. **Scale Horizontally**: Add load balancers and replicas based on actual load
+4. **Extract Services**: Only separate components that prove to need independent scaling
+5. **Edge Deployment**: Partner with telecoms for edge caching in Phase 3
+
+### Core Components by Phase
+
+**Phase 1 (MVP)**:
+1. **Managed Telephony**: Twilio/Exotel for IVR (avoid building from scratch)
+2. **Rule-Based Processing**: Simple keyword matching for common queries
+3. **Static Knowledge Base**: Curated FAQ-style responses
+4. **DTMF Navigation**: Keypad fallback for all interactions
+5. **Human Queue**: Direct escalation to Krishi Sahayak
+
+**Phase 2 (AI-Enhanced)**:
+1. **Telephony Gateway**: Custom integration with telecom providers
+2. **Hybrid Processing**: ML for complex queries, rules for simple ones
+3. **Dynamic Knowledge Engine**: Graph-based agricultural reasoning
+4. **Confidence-Based Routing**: Smart escalation based on query risk
+5. **Context Management**: Session and seasonal context retention
+
+**Phase 3 (Scale)**:
+1. **Edge Intelligence**: Models deployed at telecom edge nodes
+2. **Full ML Pipeline**: End-to-end ML for all interactions
+3. **Predictive Analytics**: Proactive alerts and recommendations
+4. **Multi-Channel**: WhatsApp, SMS, USSD integration
+5. **API Ecosystem**: Third-party integrations and white-labeling
 ## Components and Interfaces
 
 ### Telephony Gateway

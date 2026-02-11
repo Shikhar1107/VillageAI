@@ -4,6 +4,15 @@
 
 The Rural Farming Assistant is a voice-first AI system designed to provide agricultural guidance to farmers in rural India who primarily use feature phones, have low digital literacy, and speak in highly localized dialects. The system operates entirely through voice interactions over telecom infrastructure, eliminating barriers of literacy, smartphone access, and internet connectivity.
 
+## Implementation Approach
+
+This system will be developed using a phased approach:
+- **Phase 1 (MVP)**: 3 priority languages, 3 pilot districts, rule-based system with human fallback
+- **Phase 2 (AI-Enhanced)**: Add ML capabilities, expand to 5 languages, 10 districts
+- **Phase 3 (Scale)**: Full dialect support (15+ languages), national deployment
+
+This phased approach ensures practical deployment, continuous validation, and sustainable scaling based on real farmer feedback.
+
 ## Glossary
 
 - **System**: The complete Rural Farming Assistant platform including IVR, STT, NLU, and voice response components
@@ -41,11 +50,14 @@ The Rural Farming Assistant is a voice-first AI system designed to provide agric
 #### Acceptance Criteria
 
 1. WHEN a farmer speaks in any supported rural dialect, THE STT_Engine SHALL transcribe the speech with minimum 75% word accuracy
-2. THE STT_Engine SHALL support at least 15 major rural dialects across Hindi, Tamil, Telugu, Kannada, Marathi, Punjabi, Bengali, and Gujarati language families
-3. WHEN speech contains code-mixing between languages, THE STT_Engine SHALL handle mixed-language utterances without requiring language switching
-4. WHEN background noise is present, THE STT_Engine SHALL filter ambient sounds typical of rural environments (animals, wind, machinery)
-5. THE STT_Engine SHALL process speech in real-time with maximum 2-second latency from speech end to transcription completion
-6. WHEN audio quality is poor, THE STT_Engine SHALL request the farmer to repeat the query in simpler terms
+2. **Phase 1**: THE STT_Engine SHALL support 3 priority languages (Hindi, Tamil, Marathi) with major rural dialects
+3. **Phase 2**: THE STT_Engine SHALL expand to 5 languages adding Telugu and Punjabi
+4. **Phase 3**: THE STT_Engine SHALL support 15+ major rural dialects across all major Indian language families
+5. WHEN speech contains code-mixing between languages, THE STT_Engine SHALL handle mixed-language utterances without requiring language switching
+6. WHEN background noise is present, THE STT_Engine SHALL filter ambient sounds typical of rural environments (animals, wind, machinery)
+7. THE STT_Engine SHALL process speech in real-time with maximum 2-second latency from speech end to transcription completion
+8. WHEN audio quality is poor, THE STT_Engine SHALL request the farmer to repeat the query in simpler terms
+9. **Phase 1**: THE System SHALL include DTMF (keypad) fallback for common queries when voice recognition fails
 
 ### Requirement 3: Agricultural Query Understanding
 
@@ -215,3 +227,101 @@ The Rural Farming Assistant is a voice-first AI system designed to provide agric
 4. THE System SHALL identify common query patterns and low-confidence scenarios for model retraining
 5. THE System SHALL generate daily reports on system health, usage patterns, and error rates
 6. THE System SHALL flag dialect-specific performance issues for targeted model improvements
+
+### Requirement 16: Data Acquisition and Model Training
+
+**User Story:** As a system developer, I want a systematic approach to collect dialect-specific training data, so that our AI models accurately understand rural farmer speech patterns.
+
+#### Acceptance Criteria
+
+1. THE System SHALL implement a consent-based data collection mechanism during calls for continuous model improvement
+2. **Phase 0**: THE System SHALL bootstrap with existing speech datasets (Google's Indic Speech, Microsoft's Project Dhwani, IIT research corpora)
+3. THE System SHALL partner with ASHA workers, agricultural universities, and NGOs for initial dialect data collection
+4. THE System SHALL maintain an annotation pipeline for agricultural domain-specific terminology
+5. THE System SHALL implement A/B testing for model improvements before full deployment
+6. THE System SHALL track dialect-specific accuracy metrics and prioritize improvement efforts
+7. THE System SHALL maintain a feedback loop where Krishi Sahayak corrections improve model training
+
+### Requirement 17: Agricultural Knowledge Base Management
+
+**User Story:** As a content manager, I want to maintain accurate and updated agricultural information, so that farmers receive validated and current guidance.
+
+#### Acceptance Criteria
+
+1. THE System SHALL source agricultural knowledge from validated sources (ICAR, state agricultural universities, Krishi Vigyan Kendras)
+2. THE System SHALL maintain a structured knowledge graph: Crop → Season → Region → Growth Stage → Problem → Solution
+3. THE System SHALL implement version control for all agricultural recommendations with expert validation timestamps
+4. THE System SHALL track regional variations of the same disease/pest and provide location-specific advice
+5. THE System SHALL update market prices daily and weather data every 6 hours from authenticated sources
+6. THE System SHALL maintain a confidence score for each piece of knowledge separate from AI confidence
+7. THE System SHALL flag outdated information for expert review every agricultural season
+
+### Requirement 18: Regulatory and Legal Compliance
+
+**User Story:** As a compliance officer, I want the system to meet all regulatory requirements, so that we avoid legal issues and maintain farmer trust.
+
+#### Acceptance Criteria
+
+1. THE Safety_Layer SHALL integrate with CIB&RC (Central Insecticides Board) database for pesticide registration verification
+2. THE System SHALL play a legal disclaimer at call start about the advisory nature of the service
+3. THE System SHALL maintain audit trails for all agricultural recommendations for minimum 7 years
+4. THE System SHALL implement data protection measures compliant with upcoming Indian data protection laws
+5. THE System SHALL obtain explicit voice consent for data collection and storage
+6. THE System SHALL provide emergency contact numbers for poison control and medical emergencies
+7. THE System SHALL flag and prevent recommendations that could violate local agricultural regulations
+
+### Requirement 19: Partnership and Stakeholder Management
+
+**User Story:** As a program manager, I want clear partnership frameworks, so that we can effectively collaborate with government, NGOs, and private sector.
+
+#### Acceptance Criteria
+
+1. THE System SHALL provide APIs for integration with government agricultural portals (mKisan, KisanCall)
+2. THE System SHALL support white-labeling for state government deployments
+3. THE System SHALL provide dashboards for agricultural extension officers to monitor regional usage
+4. THE System SHALL enable agricultural input companies to sponsor specific advisory content (with clear disclosure)
+5. THE System SHALL maintain separate data access levels for different stakeholder categories
+6. THE System SHALL generate impact reports for funding partners and government agencies
+7. THE System SHALL support integration with agricultural insurance providers for claim assistance
+
+### Requirement 20: Economic Sustainability and Business Model
+
+**User Story:** As a financial manager, I want a sustainable revenue model, so that the service can operate and scale without continuous grant dependency.
+
+#### Acceptance Criteria
+
+1. THE System SHALL track cost-per-farmer metrics including infrastructure, telephony, and human support costs
+2. THE System SHALL support multiple revenue streams: government subsidies, CSR funding, premium services
+3. THE System SHALL implement a freemium model with basic services free and premium features (personalized advisory, market linkages) paid
+4. THE System SHALL provide billing integration for telecom partners to handle call costs
+5. THE System SHALL track ROI metrics: yield improvement, cost savings, farmer income increase
+6. THE System SHALL maintain financial dashboards for investors and board members
+7. THE System SHALL support dynamic pricing based on service tier and geographic region
+
+### Requirement 21: Pilot Program Implementation
+
+**User Story:** As a pilot coordinator, I want a structured pilot program, so that we can validate the system before full-scale deployment.
+
+#### Acceptance Criteria
+
+1. **Phase 1**: THE System SHALL support a 3-month pilot in 3 diverse districts (one each in Hindi, Tamil, Marathi regions)
+2. THE Pilot SHALL target 500 farmers per district with measurable success metrics
+3. THE System SHALL track pilot-specific metrics: adoption rate, repeat usage, query resolution, farmer satisfaction
+4. THE System SHALL implement rapid iteration cycles based on weekly farmer feedback
+5. THE System SHALL maintain separate pilot and production environments for safe testing
+6. THE System SHALL generate detailed pilot reports with recommendations for scale-up
+7. THE System SHALL validate economic unit costs during pilot before committing to scale
+
+### Requirement 22: Offline and Fallback Mechanisms
+
+**User Story:** As a farmer in an area with poor connectivity, I want alternative ways to access the service, so that I can get help even during network issues.
+
+#### Acceptance Criteria
+
+1. THE System SHALL provide SMS-based query submission for basic questions when voice calls fail
+2. THE System SHALL cache common responses at telecom edge nodes for faster access
+3. THE System SHALL maintain pre-recorded IVR trees for emergency information (pesticide poisoning, flood warnings)
+4. THE System SHALL support USSD codes for quick price and weather checks without calling
+5. THE System SHALL partner with local FM radio for broadcasting seasonal advisories
+6. THE System SHALL implement automatic callback scheduling during network congestion
+7. THE System SHALL provide offline-first design for Krishi Sahayak mobile app (when available)
