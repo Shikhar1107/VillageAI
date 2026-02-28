@@ -1,0 +1,36 @@
+{
+  "crops": {
+    "wheat": {
+      "aliases": ["wheat", "gehun", "gehu"],
+      "problems": {
+        "yellow_rust": {
+          "keywords": ["yellow spots", "yellow stripe", "yellow leaves"],
+          "symptoms": "Yellow stripes or patches on wheat leaves.",
+          "organic_solution": {
+            "name": "Neem Oil Spray",
+            "dosage": "5 ml per liter of water",
+            "method": "Spray in early morning."
+          },
+          "chemical_solution": {
+            "name": "Propiconazole",
+            "dosage": "1 ml per liter of water",
+            "method": "Spray once and repeat after 10 days if needed."
+          },
+          "safety_notes": "Wear gloves and mask while spraying."
+        }
+      }
+    }
+  },
+  "pesticide_whitelist": [
+    {
+      "name": "Propiconazole",
+      "approved_crops": ["wheat"],
+      "max_dosage_ml_per_liter": 1
+    }
+  ],
+
+  "safety_rules": {
+    "banned_substances": ["DDT", "Endosulfan"],
+    "emergency_keywords": ["poison", "drank pesticide", "spray accident"]
+  }
+}
