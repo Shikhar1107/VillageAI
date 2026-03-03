@@ -4,6 +4,7 @@ export interface VoiceResponse {
   transcript: string
   response: string
   audio_url: string
+  transcription_method?: string
 }
 
 export interface Metrics {

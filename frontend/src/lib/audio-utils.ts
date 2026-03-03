@@ -116,7 +116,7 @@ export class AudioRecorder {
   }
 
   isRecording(): boolean {
-    return this.mediaRecorder?.state === 'recording'
+    return this.mediaRecorder?.state === 'recording' || false
   }
 
   async convertToWav(blob: Blob): Promise<Blob> {
@@ -229,7 +229,7 @@ export class AudioVisualizer {
 
       this.animationId = requestAnimationFrame(draw)
 
-      this.analyser.getByteFrequencyData(this.dataArray)
+      this.analyser.getByteFrequencyData(this.dataArray as Uint8Array<ArrayBuffer>)
 
       ctx.fillStyle = 'rgb(255, 255, 255)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)

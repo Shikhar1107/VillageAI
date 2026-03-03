@@ -1,22 +1,506 @@
 {
   "crops": {
     "wheat": {
-      "aliases": ["wheat", "gehun", "gehu"],
+      "hindi_name": "गेहूं",
+      "aliases": ["wheat", "gehun", "gehu", "gandum", "गेहूं", "गेहूँ", "गेहु", "गंदुम"],
       "problems": {
         "yellow_rust": {
-          "keywords": ["yellow spots", "yellow stripe", "yellow leaves"],
+          "hindi_name": "पीला रतुआ",
+          "keywords": ["yellow spots", "yellow stripe", "yellow leaves", "peeli dhariyan", "peele patte", "peela", "पीला", "पीली", "पीले", "धब्बे", "धब्बा", "दाग", "पीले धब्बे", "पीली धारियां", "पीले पत्ते", "पीला धब्बा", "खब्बे", "पत्तियों पर"],
           "symptoms": "Yellow stripes or patches on wheat leaves.",
+          "symptoms_hi": "गेहूं की पत्तियों पर पीली धारियां या धब्बे।",
           "organic_solution": {
             "name": "Neem Oil Spray",
+            "name_hi": "नीम तेल स्प्रे",
             "dosage": "5 ml per liter of water",
-            "method": "Spray in early morning."
+            "dosage_hi": "5 मिली प्रति लीटर पानी",
+            "method": "Spray in early morning.",
+            "method_hi": "सुबह जल्दी छिड़काव करें।"
           },
           "chemical_solution": {
             "name": "Propiconazole",
+            "name_hi": "प्रोपिकोनाज़ोल",
             "dosage": "1 ml per liter of water",
-            "method": "Spray once and repeat after 10 days if needed."
+            "dosage_hi": "1 मिली प्रति लीटर पानी",
+            "method": "Spray once and repeat after 10 days if needed.",
+            "method_hi": "एक बार छिड़काव करें और ज़रूरत हो तो 10 दिन बाद दोहराएं।"
           },
-          "safety_notes": "Wear gloves and mask while spraying."
+          "safety_notes": "Wear gloves and mask while spraying.",
+          "safety_notes_hi": "छिड़काव करते समय दस्ताने और मास्क पहनें।"
+        },
+        "leaf_blight": {
+          "hindi_name": "पत्ती झुलसा",
+          "keywords": ["brown spots", "dry leaves", "leaf drying", "patte sukh rahe", "bhure dhabe", "भूरे धब्बे", "पत्ते सूख रहे", "सूखना", "भूरा धब्बा"],
+          "symptoms": "Brown oval spots on leaves that expand and cause drying.",
+          "symptoms_hi": "पत्तियों पर भूरे अंडाकार धब्बे जो फैलकर सूखने लगते हैं।",
+          "organic_solution": {
+            "name": "Trichoderma viride",
+            "name_hi": "ट्राइकोडर्मा विरिडी",
+            "dosage": "4 grams per liter of water",
+            "dosage_hi": "4 ग्राम प्रति लीटर पानी",
+            "method": "Spray at first sign of spots, repeat after 15 days.",
+            "method_hi": "धब्बे दिखते ही छिड़काव करें, 15 दिन बाद दोहराएं।"
+          },
+          "chemical_solution": {
+            "name": "Mancozeb",
+            "name_hi": "मैन्कोज़ेब",
+            "dosage": "2.5 grams per liter of water",
+            "dosage_hi": "2.5 ग्राम प्रति लीटर पानी",
+            "method": "Spray twice at 15-day intervals.",
+            "method_hi": "15 दिन के अंतराल पर दो बार छिड़काव करें।"
+          },
+          "safety_notes": "Do not spray near water sources. Wear protective equipment.",
+          "safety_notes_hi": "पानी के स्रोतों के पास छिड़काव न करें। सुरक्षा उपकरण पहनें।"
+        },
+        "aphid": {
+          "hindi_name": "माहू (एफिड)",
+          "keywords": ["small insects", "aphid", "green bugs", "hare keede", "chota keeda", "insects on wheat", "हरे कीड़े", "छोटा कीड़ा", "कीड़े", "माहू"],
+          "symptoms": "Clusters of small green or black insects on leaves and stems, causing curling.",
+          "symptoms_hi": "पत्तियों और तनों पर छोटे हरे या काले कीड़ों के झुंड, जिससे पत्ते मुड़ जाते हैं।",
+          "organic_solution": {
+            "name": "Soap water spray",
+            "name_hi": "साबुन पानी स्प्रे",
+            "dosage": "10 ml liquid soap per liter of water",
+            "dosage_hi": "10 मिली तरल साबुन प्रति लीटर पानी",
+            "method": "Spray directly on affected areas in the evening.",
+            "method_hi": "शाम को प्रभावित जगहों पर सीधे छिड़काव करें।"
+          },
+          "chemical_solution": {
+            "name": "Imidacloprid",
+            "name_hi": "इमिडाक्लोप्रिड",
+            "dosage": "0.5 ml per liter of water",
+            "dosage_hi": "0.5 मिली प्रति लीटर पानी",
+            "method": "Single spray when aphid population is high.",
+            "method_hi": "माहू की संख्या ज़्यादा होने पर एक बार छिड़काव करें।"
+          },
+          "safety_notes": "Avoid spraying during flowering to protect pollinators.",
+          "safety_notes_hi": "फूल आने के समय छिड़काव न करें ताकि परागणकर्ता सुरक्षित रहें।"
+        }
+      }
+    },
+    "rice": {
+      "hindi_name": "धान",
+      "aliases": ["rice", "dhan", "chawal", "paddy", "धान", "चावल", "पैडी"],
+      "problems": {
+        "blast": {
+          "hindi_name": "ब्लास्ट",
+          "keywords": ["blast", "brown spots rice", "leaf spots rice", "dhan ka blast", "dhabe", "ब्लास्ट", "भूरे धब्बे", "धान का ब्लास्ट", "धब्बे"],
+          "symptoms": "Diamond-shaped brown spots on leaves with gray centers. Can affect neck and panicle.",
+          "symptoms_hi": "पत्तियों पर हीरे के आकार के भूरे धब्बे जिनके बीच में भूरा रंग होता है।",
+          "organic_solution": {
+            "name": "Pseudomonas fluorescens",
+            "name_hi": "स्यूडोमोनास फ्लोरेसेंस",
+            "dosage": "10 grams per liter of water",
+            "dosage_hi": "10 ग्राम प्रति लीटर पानी",
+            "method": "Spray at tillering stage and repeat before flowering.",
+            "method_hi": "कल्ले फूटने के समय छिड़काव करें और फूल आने से पहले दोहराएं।"
+          },
+          "chemical_solution": {
+            "name": "Tricyclazole",
+            "name_hi": "ट्राइसाइक्लाज़ोल",
+            "dosage": "0.6 grams per liter of water",
+            "dosage_hi": "0.6 ग्राम प्रति लीटर पानी",
+            "method": "Spray at appearance of symptoms, repeat after 15 days.",
+            "method_hi": "लक्षण दिखते ही छिड़काव करें, 15 दिन बाद दोहराएं।"
+          },
+          "safety_notes": "Maintain proper spacing between plants. Avoid excess nitrogen fertilizer.",
+          "safety_notes_hi": "पौधों के बीच उचित दूरी रखें। अधिक नाइट्रोजन खाद से बचें।"
+        },
+        "brown_planthopper": {
+          "hindi_name": "भूरा माहू",
+          "keywords": ["hopper burn", "drying rice", "brown plant hopper", "bhura maahu", "paddy drying", "keeda", "भूरा माहू", "सूखना", "कीड़ा", "धान सूख रहा"],
+          "symptoms": "Plants dry from base upward showing 'hopper burn'. Circular patches of dried plants in field.",
+          "symptoms_hi": "पौधे नीचे से ऊपर की ओर सूखते हैं। खेत में गोल-गोल सूखे पौधों के धब्बे दिखते हैं।",
+          "organic_solution": {
+            "name": "Neem kernel extract",
+            "name_hi": "नीम गिरी का अर्क",
+            "dosage": "50 grams crushed neem seeds per liter of water",
+            "dosage_hi": "50 ग्राम पिसी नीम गिरी प्रति लीटर पानी",
+            "method": "Spray at base of plants in the evening. Drain field water before spraying.",
+            "method_hi": "शाम को पौधों की जड़ों पर छिड़काव करें। छिड़काव से पहले खेत का पानी निकाल दें।"
+          },
+          "chemical_solution": {
+            "name": "Buprofezin",
+            "name_hi": "बुप्रोफेज़िन",
+            "dosage": "1.5 ml per liter of water",
+            "dosage_hi": "1.5 मिली प्रति लीटर पानी",
+            "method": "Spray directed at plant base. Do not mix with other pesticides.",
+            "method_hi": "पौधे की जड़ पर छिड़काव करें। अन्य कीटनाशकों के साथ न मिलाएं।"
+          },
+          "safety_notes": "Avoid indiscriminate use of insecticides which kill natural enemies.",
+          "safety_notes_hi": "अंधाधुंध कीटनाशक का प्रयोग न करें, इससे प्राकृतिक शत्रु मर जाते हैं।"
+        },
+        "bacterial_leaf_blight": {
+          "hindi_name": "जीवाणु पत्ती झुलसा",
+          "keywords": ["leaf blight rice", "water soaked", "yellow edges", "patte pe pani jaisa", "kinare peele", "पत्ते पर पानी जैसा", "किनारे पीले", "पीले किनारे"],
+          "symptoms": "Water-soaked streaks on leaf edges that turn yellow and then white-gray.",
+          "symptoms_hi": "पत्तियों के किनारों पर पानी जैसी धारियां जो पीली और फिर सफेद-भूरी हो जाती हैं।",
+          "organic_solution": {
+            "name": "Copper hydroxide",
+            "name_hi": "कॉपर हाइड्रॉक्साइड",
+            "dosage": "2 grams per liter of water",
+            "dosage_hi": "2 ग्राम प्रति लीटर पानी",
+            "method": "Spray at first sign of symptoms.",
+            "method_hi": "लक्षण दिखते ही छिड़काव करें।"
+          },
+          "chemical_solution": {
+            "name": "Streptomycin sulfate",
+            "name_hi": "स्ट्रेप्टोमाइसिन सल्फेट",
+            "dosage": "0.5 grams per liter of water",
+            "dosage_hi": "0.5 ग्राम प्रति लीटर पानी",
+            "method": "Spray twice at 10-day intervals.",
+            "method_hi": "10 दिन के अंतराल पर दो बार छिड़काव करें।"
+          },
+          "safety_notes": "Use resistant varieties. Avoid excess nitrogen.",
+          "safety_notes_hi": "प्रतिरोधी किस्में उगाएं। अधिक नाइट्रोजन से बचें।"
+        }
+      }
+    },
+    "cotton": {
+      "hindi_name": "कपास",
+      "aliases": ["cotton", "kapas", "narma", "kapah", "कपास", "नरमा", "रुई"],
+      "problems": {
+        "bollworm": {
+          "hindi_name": "बॉलवर्म (सुंडी)",
+          "keywords": ["bollworm", "worm in cotton", "cotton worm", "keeda kapas", "sundi", "bore holes", "कीड़ा", "सुंडी", "कपास कीड़ा", "छेद"],
+          "symptoms": "Bore holes in cotton bolls. Larvae feed inside bolls causing them to rot.",
+          "symptoms_hi": "कपास के टिंडों में छेद। इल्लियां अंदर से खाकर टिंडे सड़ा देती हैं।",
+          "organic_solution": {
+            "name": "Bt spray (Bacillus thuringiensis)",
+            "name_hi": "बीटी स्प्रे (बैसिलस थुरिंजिएंसिस)",
+            "dosage": "2 grams per liter of water",
+            "dosage_hi": "2 ग्राम प्रति लीटर पानी",
+            "method": "Spray in evening when larvae are small. Repeat every 7-10 days.",
+            "method_hi": "शाम को छिड़काव करें जब इल्लियां छोटी हों। हर 7-10 दिन दोहराएं।"
+          },
+          "chemical_solution": {
+            "name": "Emamectin benzoate",
+            "name_hi": "इमामेक्टिन बेंजोएट",
+            "dosage": "0.4 grams per liter of water",
+            "dosage_hi": "0.4 ग्राम प्रति लीटर पानी",
+            "method": "Spray when 5-10% bolls show damage.",
+            "method_hi": "जब 5-10% टिंडों में नुकसान दिखे तब छिड़काव करें।"
+          },
+          "safety_notes": "Use pheromone traps for monitoring. Maintain refuge crop.",
+          "safety_notes_hi": "निगरानी के लिए फेरोमोन ट्रैप लगाएं। रिफ्यूज फसल रखें।"
+        },
+        "whitefly": {
+          "hindi_name": "सफेद मक्खी",
+          "keywords": ["white fly", "whitefly", "safed makhi", "white insects cotton", "sticky leaves cotton", "सफेद मक्खी", "चिपचिपे पत्ते", "सफेद कीड़े"],
+          "symptoms": "Tiny white insects on leaf undersides. Leaves become sticky with honeydew and develop sooty mold.",
+          "symptoms_hi": "पत्तियों के नीचे छोटे सफेद कीड़े। पत्ते चिपचिपे हो जाते हैं और काला फफूंद लग जाता है।",
+          "organic_solution": {
+            "name": "Yellow sticky traps + Neem oil",
+            "name_hi": "पीले चिपचिपे ट्रैप + नीम तेल",
+            "dosage": "5 ml neem oil per liter of water",
+            "dosage_hi": "5 मिली नीम तेल प्रति लीटर पानी",
+            "method": "Install yellow sticky traps and spray neem oil weekly.",
+            "method_hi": "पीले चिपचिपे ट्रैप लगाएं और हर हफ्ते नीम तेल छिड़कें।"
+          },
+          "chemical_solution": {
+            "name": "Diafenthiuron",
+            "name_hi": "डायफेंथ्यूरॉन",
+            "dosage": "1.5 grams per liter of water",
+            "dosage_hi": "1.5 ग्राम प्रति लीटर पानी",
+            "method": "Spray on leaf undersides. Rotate with different chemistry.",
+            "method_hi": "पत्तियों के नीचे छिड़काव करें। अलग-अलग दवाइयां बदल-बदल कर प्रयोग करें।"
+          },
+          "safety_notes": "Do not use synthetic pyrethroids which cause whitefly resurgence.",
+          "safety_notes_hi": "सिंथेटिक पायरेथ्रॉइड का प्रयोग न करें, इससे सफेद मक्खी और बढ़ती है।"
+        }
+      }
+    },
+    "tomato": {
+      "hindi_name": "टमाटर",
+      "aliases": ["tomato", "tamatar", "tamaatar", "टमाटर"],
+      "problems": {
+        "late_blight": {
+          "hindi_name": "झुलसा रोग",
+          "keywords": ["blight", "black spots tomato", "rotting tomato", "tamatar sad raha", "kale dhabe", "काले धब्बे", "टमाटर सड़ रहा", "सड़ना"],
+          "symptoms": "Dark brown to black water-soaked lesions on leaves and fruits. White mold underneath in humid conditions.",
+          "symptoms_hi": "पत्तियों और फलों पर गहरे भूरे से काले पानी जैसे धब्बे। नमी में नीचे सफेद फफूंद।",
+          "organic_solution": {
+            "name": "Bordeaux mixture",
+            "name_hi": "बोर्डो मिश्रण",
+            "dosage": "10 grams copper sulfate + 10 grams lime per liter of water",
+            "dosage_hi": "10 ग्राम कॉपर सल्फेट + 10 ग्राम चूना प्रति लीटर पानी",
+            "method": "Spray preventively every 7-10 days during rainy season.",
+            "method_hi": "बारिश के मौसम में हर 7-10 दिन रोकथाम के लिए छिड़काव करें।"
+          },
+          "chemical_solution": {
+            "name": "Metalaxyl + Mancozeb",
+            "name_hi": "मेटालैक्सिल + मैन्कोज़ेब",
+            "dosage": "2.5 grams per liter of water",
+            "dosage_hi": "2.5 ग्राम प्रति लीटर पानी",
+            "method": "Spray at first sign of disease. Repeat after 10-15 days.",
+            "method_hi": "बीमारी दिखते ही छिड़काव करें। 10-15 दिन बाद दोहराएं।"
+          },
+          "safety_notes": "Remove and destroy infected plant parts. Ensure good air circulation.",
+          "safety_notes_hi": "संक्रमित पौधों के हिस्से हटाकर नष्ट करें। हवा का अच्छा प्रवाह रखें।"
+        },
+        "leaf_curl": {
+          "hindi_name": "पत्ता मोड़ रोग",
+          "keywords": ["curling leaves tomato", "leaf curl", "patte mud rahe", "virus tomato", "small leaves", "पत्ते मुड़ रहे", "छोटे पत्ते", "वायरस"],
+          "symptoms": "Leaves curl upward and become thick and leathery. Plants become stunted with reduced yield.",
+          "symptoms_hi": "पत्ते ऊपर की ओर मुड़ जाते हैं और मोटे हो जाते हैं। पौधे बौने रह जाते हैं।",
+          "organic_solution": {
+            "name": "Neem oil + Yellow sticky traps",
+            "name_hi": "नीम तेल + पीले चिपचिपे ट्रैप",
+            "dosage": "5 ml neem oil per liter of water",
+            "dosage_hi": "5 मिली नीम तेल प्रति लीटर पानी",
+            "method": "Control whitefly vectors with sticky traps and neem sprays.",
+            "method_hi": "चिपचिपे ट्रैप और नीम स्प्रे से सफेद मक्खी को रोकें।"
+          },
+          "chemical_solution": {
+            "name": "Imidacloprid",
+            "name_hi": "इमिडाक्लोप्रिड",
+            "dosage": "0.3 ml per liter of water",
+            "dosage_hi": "0.3 मिली प्रति लीटर पानी",
+            "method": "Spray to control whitefly vectors. Remove infected plants.",
+            "method_hi": "सफेद मक्खी रोकने के लिए छिड़काव करें। संक्रमित पौधे हटा दें।"
+          },
+          "safety_notes": "This is a viral disease spread by whiteflies. Control vectors early. Remove infected plants immediately.",
+          "safety_notes_hi": "यह सफेद मक्खी से फैलने वाला वायरस रोग है। जल्दी नियंत्रण करें। संक्रमित पौधे तुरंत हटाएं।"
+        },
+        "fruit_borer": {
+          "hindi_name": "फल छेदक",
+          "keywords": ["worm in tomato", "hole in tomato", "tamatar mein keeda", "bore", "caterpillar", "टमाटर में कीड़ा", "छेद", "सुंडी"],
+          "symptoms": "Circular bore holes in tomato fruits with frass. Larvae feed inside fruits causing rotting.",
+          "symptoms_hi": "टमाटर के फलों में गोल छेद। इल्लियां अंदर से खाकर फल सड़ा देती हैं।",
+          "organic_solution": {
+            "name": "Bt spray + Pheromone traps",
+            "name_hi": "बीटी स्प्रे + फेरोमोन ट्रैप",
+            "dosage": "2 grams Bt per liter of water",
+            "dosage_hi": "2 ग्राम बीटी प्रति लीटर पानी",
+            "method": "Install pheromone traps and spray Bt at fruit setting stage.",
+            "method_hi": "फेरोमोन ट्रैप लगाएं और फल बनने के समय बीटी छिड़कें।"
+          },
+          "chemical_solution": {
+            "name": "Chlorantraniliprole",
+            "name_hi": "क्लोरैंट्रानिलिप्रोल",
+            "dosage": "0.3 ml per liter of water",
+            "dosage_hi": "0.3 मिली प्रति लीटर पानी",
+            "method": "Spray at fruit setting stage. Observe pre-harvest interval of 3 days.",
+            "method_hi": "फल बनने के समय छिड़काव करें। तोड़ने से 3 दिन पहले छिड़काव बंद करें।"
+          },
+          "safety_notes": "Observe waiting period before harvest. Pick and destroy infested fruits.",
+          "safety_notes_hi": "तोड़ने से पहले प्रतीक्षा अवधि का पालन करें। प्रभावित फल तोड़कर नष्ट करें।"
+        }
+      }
+    },
+    "potato": {
+      "hindi_name": "आलू",
+      "aliases": ["potato", "aloo", "aaloo", "आलू"],
+      "problems": {
+        "late_blight": {
+          "hindi_name": "झुलसा रोग",
+          "keywords": ["blight potato", "black spots potato", "aloo sad raha", "patte kale", "rotting", "काले धब्बे", "आलू सड़ रहा", "पत्ते काले", "सड़ना"],
+          "symptoms": "Dark brown patches on leaves and stems. White fungal growth underneath. Tubers show brown rot.",
+          "symptoms_hi": "पत्तियों और तनों पर गहरे भूरे धब्बे। नीचे सफेद फफूंद। कंदों में भूरी सड़न।",
+          "organic_solution": {
+            "name": "Bordeaux mixture",
+            "name_hi": "बोर्डो मिश्रण",
+            "dosage": "10 grams copper sulfate + 10 grams lime per liter of water",
+            "dosage_hi": "10 ग्राम कॉपर सल्फेट + 10 ग्राम चूना प्रति लीटर पानी",
+            "method": "Preventive spray before rainy weather. Repeat every 7 days.",
+            "method_hi": "बारिश से पहले रोकथाम के लिए छिड़काव करें। हर 7 दिन दोहराएं।"
+          },
+          "chemical_solution": {
+            "name": "Cymoxanil + Mancozeb",
+            "name_hi": "साइमॉक्सानिल + मैन्कोज़ेब",
+            "dosage": "3 grams per liter of water",
+            "dosage_hi": "3 ग्राम प्रति लीटर पानी",
+            "method": "Spray at first symptom. Alternate with different fungicides.",
+            "method_hi": "लक्षण दिखते ही छिड़काव करें। अलग-अलग फफूंदनाशक बदल-बदल कर प्रयोग करें।"
+          },
+          "safety_notes": "Use certified disease-free seed potatoes. Hill up soil around stems.",
+          "safety_notes_hi": "प्रमाणित रोगमुक्त बीज आलू का प्रयोग करें। तनों के चारों ओर मिट्टी चढ़ाएं।"
+        },
+        "tuber_moth": {
+          "hindi_name": "आलू की सुंडी",
+          "keywords": ["moth potato", "worm in potato", "keeda aloo", "holes in potato", "sundi", "कीड़ा आलू", "छेद", "सुंडी"],
+          "symptoms": "Tunnels and mines in potato tubers. Frass visible at entry holes. Stored potatoes also affected.",
+          "symptoms_hi": "आलू के कंदों में सुरंगें। छेदों पर मल दिखता है। भंडारित आलू भी प्रभावित होते हैं।",
+          "organic_solution": {
+            "name": "Deep planting + Mulching",
+            "name_hi": "गहरी बुवाई + पलवार",
+            "dosage": "Plant tubers 10-15 cm deep",
+            "dosage_hi": "कंद 10-15 सेमी गहरे लगाएं",
+            "method": "Hill soil regularly to cover exposed tubers. Use thick mulch layer.",
+            "method_hi": "नियमित रूप से मिट्टी चढ़ाएं। मोटी पलवार बिछाएं।"
+          },
+          "chemical_solution": {
+            "name": "Quinalphos",
+            "name_hi": "क्विनालफॉस",
+            "dosage": "2 ml per liter of water",
+            "dosage_hi": "2 मिली प्रति लीटर पानी",
+            "method": "Drench soil around plants when moth activity is noticed.",
+            "method_hi": "कीट दिखने पर पौधों के चारों ओर मिट्टी में घोल डालें।"
+          },
+          "safety_notes": "Store potatoes in cool dark place. Remove affected tubers immediately.",
+          "safety_notes_hi": "आलू ठंडी अंधेरी जगह में रखें। प्रभावित कंद तुरंत हटाएं।"
+        }
+      }
+    },
+    "sugarcane": {
+      "hindi_name": "गन्ना",
+      "aliases": ["sugarcane", "ganna", "iikh", "eekh", "गन्ना", "गन्ने", "ईख"],
+      "problems": {
+        "red_rot": {
+          "hindi_name": "लाल सड़न",
+          "keywords": ["red rot", "red inside", "ganna lal", "stem red", "sugarcane disease", "गन्ना लाल", "लाल अंदर", "लाल सड़न"],
+          "symptoms": "Red discoloration inside the cane with white patches. Cane dries and becomes hollow.",
+          "symptoms_hi": "गन्ने के अंदर लाल रंग और सफेद धब्बे। गन्ना सूखकर खोखला हो जाता है।",
+          "organic_solution": {
+            "name": "Trichoderma treatment",
+            "name_hi": "ट्राइकोडर्मा उपचार",
+            "dosage": "10 grams Trichoderma per liter of water",
+            "dosage_hi": "10 ग्राम ट्राइकोडर्मा प्रति लीटर पानी",
+            "method": "Dip seed cane in solution for 15 minutes before planting.",
+            "method_hi": "बुवाई से पहले बीज गन्ने को 15 मिनट घोल में डुबोएं।"
+          },
+          "chemical_solution": {
+            "name": "Carbendazim",
+            "name_hi": "कार्बेन्डाज़िम",
+            "dosage": "2 grams per liter of water",
+            "dosage_hi": "2 ग्राम प्रति लीटर पानी",
+            "method": "Sett treatment: dip seed cane for 15 minutes before planting.",
+            "method_hi": "सेट उपचार: बुवाई से पहले बीज गन्ने को 15 मिनट डुबोएं।"
+          },
+          "safety_notes": "Use disease-free seed cane. Remove and burn affected stalks. Do not ratoon affected fields.",
+          "safety_notes_hi": "रोगमुक्त बीज गन्ना प्रयोग करें। प्रभावित गन्ने हटाकर जलाएं। प्रभावित खेत में पेड़ी न रखें।"
+        },
+        "top_borer": {
+          "hindi_name": "शीर्ष छेदक",
+          "keywords": ["borer sugarcane", "dead heart", "ganna keeda", "top drying", "sundi ganna", "गन्ना कीड़ा", "सुंडी", "ऊपर सूखना", "डेड हार्ट"],
+          "symptoms": "Dead heart symptom - central shoot dries up. Bore holes in upper internodes.",
+          "symptoms_hi": "डेड हार्ट - बीच का तना सूख जाता है। ऊपरी गांठों में छेद।",
+          "organic_solution": {
+            "name": "Trichogramma release",
+            "name_hi": "ट्राइकोग्रामा छोड़ना",
+            "dosage": "50,000 eggs per acre",
+            "dosage_hi": "50,000 अंडे प्रति एकड़",
+            "method": "Release Trichogramma parasitoids at 15-day intervals during egg-laying season.",
+            "method_hi": "अंडे देने के मौसम में 15 दिन के अंतराल पर ट्राइकोग्रामा छोड़ें।"
+          },
+          "chemical_solution": {
+            "name": "Fipronil granules",
+            "name_hi": "फिप्रोनिल दानेदार",
+            "dosage": "Apply 15 kg per acre in leaf whorl",
+            "dosage_hi": "15 किलो प्रति एकड़ पत्ते की गोभ में डालें",
+            "method": "Apply granules in leaf whorls when dead hearts appear.",
+            "method_hi": "डेड हार्ट दिखने पर पत्तों की गोभ में दाने डालें।"
+          },
+          "safety_notes": "Remove and destroy dead hearts. Avoid late planting.",
+          "safety_notes_hi": "डेड हार्ट हटाकर नष्ट करें। देर से बुवाई से बचें।"
+        }
+      }
+    },
+    "maize": {
+      "hindi_name": "मक्का",
+      "aliases": ["maize", "makka", "makki", "corn", "bhutta", "मक्का", "मक्की", "भुट्टा"],
+      "problems": {
+        "fall_armyworm": {
+          "hindi_name": "फॉल आर्मीवर्म",
+          "keywords": ["armyworm", "fall army worm", "caterpillar maize", "makka keeda", "sundi makka", "leaves eaten", "मक्का कीड़ा", "सुंडी", "पत्ते खाए", "इल्ली"],
+          "symptoms": "Ragged feeding damage on leaves. Larvae found in leaf whorls with frass. Can destroy entire crop.",
+          "symptoms_hi": "पत्तियों पर बेतरतीब कटाव। पत्तों की गोभ में इल्लियां और मल। पूरी फसल नष्ट हो सकती है।",
+          "organic_solution": {
+            "name": "Bt spray + Sand + Lime",
+            "name_hi": "बीटी स्प्रे + रेत + चूना",
+            "dosage": "Apply sand-lime mixture (9:1) in leaf whorls",
+            "dosage_hi": "रेत-चूना मिश्रण (9:1) पत्तों की गोभ में डालें",
+            "method": "Apply sand-lime in whorls early morning when larvae are small. Spray Bt at 2g/liter.",
+            "method_hi": "सुबह जल्दी गोभ में रेत-चूना डालें जब इल्लियां छोटी हों। बीटी 2 ग्राम/लीटर छिड़कें।"
+          },
+          "chemical_solution": {
+            "name": "Spinetoram",
+            "name_hi": "स्पिनेटोरम",
+            "dosage": "0.5 ml per liter of water",
+            "dosage_hi": "0.5 मिली प्रति लीटर पानी",
+            "method": "Spray directed into leaf whorls. Apply in early morning or evening.",
+            "method_hi": "पत्तों की गोभ में छिड़काव करें। सुबह या शाम छिड़कें।"
+          },
+          "safety_notes": "Scout fields regularly. Early detection is critical. Use pheromone traps for monitoring.",
+          "safety_notes_hi": "नियमित रूप से खेत की जांच करें। जल्दी पहचान ज़रूरी है। निगरानी के लिए फेरोमोन ट्रैप लगाएं।"
+        },
+        "stem_borer": {
+          "hindi_name": "तना छेदक",
+          "keywords": ["stem borer", "dead heart maize", "bore in stem", "tana borer", "makka ka tana", "तना छेदक", "डेड हार्ट", "तने में छेद"],
+          "symptoms": "Dead heart in young plants. Bore holes in stems with frass. Stems break easily at bored sections.",
+          "symptoms_hi": "छोटे पौधों में डेड हार्ट। तनों में छेद और मल। छेद वाली जगह से तना आसानी से टूट जाता है।",
+          "organic_solution": {
+            "name": "Trichogramma release",
+            "name_hi": "ट्राइकोग्रामा छोड़ना",
+            "dosage": "50,000 eggs per acre",
+            "dosage_hi": "50,000 अंडे प्रति एकड़",
+            "method": "Release at 15-day intervals starting from 20 days after germination.",
+            "method_hi": "अंकुरण के 20 दिन बाद से 15 दिन के अंतराल पर छोड़ें।"
+          },
+          "chemical_solution": {
+            "name": "Carbofuran granules",
+            "name_hi": "कार्बोफ्यूरान दानेदार",
+            "dosage": "8-10 granules per whorl",
+            "dosage_hi": "8-10 दाने प्रति गोभ",
+            "method": "Apply in leaf whorl at 20-25 days after germination.",
+            "method_hi": "अंकुरण के 20-25 दिन बाद पत्तों की गोभ में डालें।"
+          },
+          "safety_notes": "Remove and destroy dead hearts. Collect and destroy stubbles after harvest.",
+          "safety_notes_hi": "डेड हार्ट हटाकर नष्ट करें। कटाई के बाद ठूंठ इकट्ठा करके नष्ट करें।"
+        }
+      }
+    },
+    "mustard": {
+      "hindi_name": "सरसों",
+      "aliases": ["mustard", "sarson", "rai", "toria", "सरसों", "राई", "तोरिया"],
+      "problems": {
+        "aphid": {
+          "hindi_name": "माहू (एफिड)",
+          "keywords": ["aphid mustard", "green insects mustard", "sarson keeda", "chota hara keeda", "lice", "सरसों कीड़ा", "छोटा हरा कीड़ा", "माहू"],
+          "symptoms": "Dense colonies of green aphids on shoots, flowers, and pods. Plants appear stunted and pods shriveled.",
+          "symptoms_hi": "शाखाओं, फूलों और फलियों पर हरे माहू के घने झुंड। पौधे बौने और फलियां सिकुड़ जाती हैं।",
+          "organic_solution": {
+            "name": "Neem oil spray",
+            "name_hi": "नीम तेल स्प्रे",
+            "dosage": "5 ml per liter of water",
+            "dosage_hi": "5 मिली प्रति लीटर पानी",
+            "method": "Spray when aphid colonies first appear. Repeat after 7-10 days.",
+            "method_hi": "माहू दिखते ही छिड़काव करें। 7-10 दिन बाद दोहराएं।"
+          },
+          "chemical_solution": {
+            "name": "Dimethoate",
+            "name_hi": "डाइमेथोएट",
+            "dosage": "2 ml per liter of water",
+            "dosage_hi": "2 मिली प्रति लीटर पानी",
+            "method": "Spray when 50+ aphids per plant are seen. Single spray usually sufficient.",
+            "method_hi": "जब प्रति पौधा 50+ माहू दिखें तब छिड़काव करें। एक बार छिड़काव आमतौर पर काफी है।"
+          },
+          "safety_notes": "Do not spray during peak flowering. Wait 20 days before harvest.",
+          "safety_notes_hi": "फूल आने के समय छिड़काव न करें। कटाई से 20 दिन पहले छिड़काव बंद करें।"
+        },
+        "white_rust": {
+          "hindi_name": "सफेद जंग",
+          "keywords": ["white spots mustard", "safed dhabe", "white pustules", "white rust sarson", "सफेद धब्बे", "सफेद जंग", "सफेद दाने"],
+          "symptoms": "White raised pustules on leaf undersides. Deformed flowers and pods. Staghead formation.",
+          "symptoms_hi": "पत्तियों के नीचे सफेद उभरे दाने। फूल और फलियां विकृत। स्टैगहेड बनना।",
+          "organic_solution": {
+            "name": "Bordeaux mixture",
+            "name_hi": "बोर्डो मिश्रण",
+            "dosage": "10 grams copper sulfate + 10 grams lime per liter of water",
+            "dosage_hi": "10 ग्राम कॉपर सल्फेट + 10 ग्राम चूना प्रति लीटर पानी",
+            "method": "Spray preventively at 45 days after sowing.",
+            "method_hi": "बुवाई के 45 दिन बाद रोकथाम के लिए छिड़काव करें।"
+          },
+          "chemical_solution": {
+            "name": "Metalaxyl + Mancozeb",
+            "name_hi": "मेटालैक्सिल + मैन्कोज़ेब",
+            "dosage": "2.5 grams per liter of water",
+            "dosage_hi": "2.5 ग्राम प्रति लीटर पानी",
+            "method": "Spray at first symptoms. Repeat after 15 days if needed.",
+            "method_hi": "लक्षण दिखते ही छिड़काव करें। ज़रूरत हो तो 15 दिन बाद दोहराएं।"
+          },
+          "safety_notes": "Use resistant varieties. Remove and destroy infected plant parts.",
+          "safety_notes_hi": "प्रतिरोधी किस्में उगाएं। संक्रमित पौधों के हिस्से हटाकर नष्ट करें।"
         }
       }
     }
@@ -26,11 +510,65 @@
       "name": "Propiconazole",
       "approved_crops": ["wheat"],
       "max_dosage_ml_per_liter": 1
+    },
+    {
+      "name": "Mancozeb",
+      "approved_crops": ["wheat", "tomato", "potato", "mustard"],
+      "max_dosage_ml_per_liter": 3
+    },
+    {
+      "name": "Imidacloprid",
+      "approved_crops": ["wheat", "cotton", "tomato", "rice"],
+      "max_dosage_ml_per_liter": 0.5
+    },
+    {
+      "name": "Tricyclazole",
+      "approved_crops": ["rice"],
+      "max_dosage_ml_per_liter": 1
+    },
+    {
+      "name": "Emamectin benzoate",
+      "approved_crops": ["cotton", "tomato", "maize"],
+      "max_dosage_ml_per_liter": 0.5
+    },
+    {
+      "name": "Chlorantraniliprole",
+      "approved_crops": ["tomato", "rice", "maize"],
+      "max_dosage_ml_per_liter": 0.5
+    },
+    {
+      "name": "Carbendazim",
+      "approved_crops": ["sugarcane", "wheat", "rice"],
+      "max_dosage_ml_per_liter": 2
+    },
+    {
+      "name": "Metalaxyl + Mancozeb",
+      "approved_crops": ["tomato", "potato", "mustard"],
+      "max_dosage_ml_per_liter": 3
+    },
+    {
+      "name": "Dimethoate",
+      "approved_crops": ["mustard", "wheat"],
+      "max_dosage_ml_per_liter": 2
+    },
+    {
+      "name": "Spinetoram",
+      "approved_crops": ["maize", "cotton"],
+      "max_dosage_ml_per_liter": 0.5
+    },
+    {
+      "name": "Buprofezin",
+      "approved_crops": ["rice"],
+      "max_dosage_ml_per_liter": 2
+    },
+    {
+      "name": "Diafenthiuron",
+      "approved_crops": ["cotton"],
+      "max_dosage_ml_per_liter": 2
     }
   ],
-
   "safety_rules": {
-    "banned_substances": ["DDT", "Endosulfan"],
-    "emergency_keywords": ["poison", "drank pesticide", "spray accident"]
+    "banned_substances": ["DDT", "Endosulfan", "Monocrotophos", "Phorate", "Methyl Parathion", "Lindane", "Aldrin"],
+    "emergency_keywords": ["poison", "drank pesticide", "spray accident", "skin burning", "eyes burning", "breathing problem", "vomiting after spray", "zeher", "jahar kha liya", "pet mein dard spray ke baad", "ज़हर", "जहर खा लिया", "उल्टी", "आंखों में जलन", "सांस की तकलीफ", "त्वचा जल रही", "स्प्रे लग गया"]
   }
 }

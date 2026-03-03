@@ -19,8 +19,8 @@ def generate_speech(text: str) -> str:
         response = polly_client.synthesize_speech(
             Text=text,
             OutputFormat="mp3",
-            VoiceId="Aditi",  # Indian English voice
-            # Engine="neural"
+            VoiceId="Kajal",
+            Engine="neural"
         )
 
         audio_stream = response["AudioStream"].read()
