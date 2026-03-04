@@ -1,6 +1,39 @@
+# IDE
 .vscode
-.env
-.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+env
+env/
+.venv/
+.env
+
+# Node
+node_modules/
+.next/
+next-env.d.ts
+
+# Credentials / Secrets
 *.csv
+*.pem
+*.key
+
+# Test files
+*.txt
+test-*.js
+
+# AWS config
+bucket-policy.json
+cors.json
+
+# Local env
+frontend/.env.local
+
+# Analytics logs
+query_logs.jsonl

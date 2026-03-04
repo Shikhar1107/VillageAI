@@ -13,11 +13,14 @@ def upload_audio_file(file_obj, filename: str) -> str:
 
     unique_filename = f"input-audio/{uuid.uuid4()}_{filename}"
 
+    # Determine content type based on file extension
+    content_type = "audio/webm" if filename.endswith(".webm") else "audio/wav"
+
     s3_client.upload_fileobj(
         file_obj,
         S3_BUCKET_NAME,
         unique_filename,
-        ExtraArgs={"ContentType": "audio/wav"}
+        ExtraArgs={"ContentType": content_type}
     )
 
     s3_uri = f"s3://{S3_BUCKET_NAME}/{unique_filename}"
