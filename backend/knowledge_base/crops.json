@@ -510,6 +510,16 @@
       "name": "Propiconazole",
       "approved_crops": ["wheat"],
       "max_dosage_ml_per_liter": 1
+<<<<<<< HEAD
+    }
+  ],
+
+  "safety_rules": {
+    "banned_substances": ["DDT", "Endosulfan"],
+    "emergency_keywords": ["poison", "drank pesticide", "spray accident"]
+  }
+}
+=======
     },
     {
       "name": "Mancozeb",
@@ -572,3 +582,4 @@
     "emergency_keywords": ["poison", "drank pesticide", "spray accident", "skin burning", "eyes burning", "breathing problem", "vomiting after spray", "zeher", "jahar kha liya", "pet mein dard spray ke baad", "ज़हर", "जहर खा लिया", "उल्टी", "आंखों में जलन", "सांस की तकलीफ", "त्वचा जल रही", "स्प्रे लग गया"]
   }
 }
+>>>>>>> dev

@@ -31,12 +31,20 @@ def detect_crop(transcript: str):
 
 
 def detect_problem(crop: str, transcript: str):
+<<<<<<< HEAD
+    transcript = transcript.lower()
+=======
     transcript = _normalize(transcript)
+>>>>>>> dev
     problems = knowledge_base["crops"][crop]["problems"]
 
     for problem_name, problem_data in problems.items():
         for keyword in problem_data["keywords"]:
+<<<<<<< HEAD
+            if keyword in transcript:
+=======
             if _normalize(keyword) in transcript:
+>>>>>>> dev
                 return problem_name
 
     return None
